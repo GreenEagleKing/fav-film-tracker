@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-// add controllers
+const filmController = require('../controllers/films')
 //const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', filmsController.getIndex)
