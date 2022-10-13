@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 let filmSchema = new mongoose.Schema({
     name: {type:String, require: true},
     poster: {type:String, require: true},
-    imbdURL: {type:String, require: true},
+    imdbURL: {type:String, require: true},
     rating: {type:Number, require: false},
     lastWatched: {type:Date, default:Date.now}
 })

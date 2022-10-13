@@ -1,4 +1,4 @@
-const schemas = require('..models/schemas.js')
+const schemas = require('../models/schemas.js')
 const bcrypt = require('bcrypt')
 
 exports.getLogin = (req,res) => {
@@ -15,8 +15,8 @@ exports.getLogout = (req, res) => {
 }
 
 exports.postLogin = async (req,res) => {
-    let email = req.body.email
-    let password = req.body.password
+    let email = req.body.emailInput
+    let password = req.body.passwordInput
     let loginSuccess = false
     let sesh = req.session
     sesh.loggedIn = false
@@ -39,7 +39,7 @@ exports.postLogin = async (req,res) => {
             }
         })
     }
-    if (loginSucess === true) {
+    if (loginSuccess === true) {
         res.redirect('/')
     } else {
         res.render('login', {title: 'Login', loggedIn: false, error: 'Invalid Login!'})
@@ -59,8 +59,8 @@ exports.postSignup = async (req,res) => {
             if(!data) {
                 let saltRounds = 10
                 let passSalt = await bcrypt.genSalt(saltRounds, async(err, salt) => {
-                    let passHash = await bcrypt.hash(pass, salt, async(err, hash) => {
-                        let acct = {email:email, pwd: hash, level: 'admin'}
+                    let passHash = await bcrypt.hash(password, salt, async(err, hash) => {
+                        let acct = {email:email, password: hash, level: 'admin'}
                         let newUser = new schemas.users(acct)
                         let saveUser = await newUser.save()
                     })

@@ -6,7 +6,7 @@ module.exports = {
         let sesh = req.session
 
         let filmResult = await film.find({})
-        .then((film) => {
+        .then((filmData) => {
             res.render('index', {title: 'Film Tracker', data: filmData, search: '', loggedIn: sesh.loggedIn})
         })
     },

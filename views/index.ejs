@@ -10,19 +10,19 @@
     <% if (data != null && loggedIn) { data.forEach( item => { %>
     <div class="d-flex flex-row justify-content-between mb-3">
         <div class="d-flex flex-column p-3">
-          <a href="<%= item.menuUrl %>" target="_blank"><img src="<%= item.icon %>" class="icon-img"></a>
+          <a href="<%= item.filmUrl %>" target="_blank"><img src="<%= item.icon %>" class="icon-img"></a>
           <% if (loggedIn) { %>
             <div class="mb-1 p-1">
-              <a href="/menu/<%= item._id %>">Edit</a> &nbsp; 
-              <a href="/menu/delete/<%= item._id %>" class="red" onclick="return confirm('Are you sure you wish to delete this?');">Delete</a>
+              <a href="/film/<%= item._id %>">Edit</a> &nbsp; 
+              <a href="/film/delete/<%= item._id %>" class="red" onclick="return confirm('Are you sure you wish to delete this?');">Delete</a>
             </div>
           <% } %>
         </div>
-        <div class="menu-code pt-4 pl-4">
-          <a href="<%= item.menuUrl %>" target="_blank">
+        <div class="film-code pt-4 pl-4">
+          <a href="<%= item.filmUrl %>" target="_blank">
             <div><i class="fa fa-book-open"></i></div>
             <span class="mb-2">
-              View Menu
+              View film
             </span>
           </a>
         </div>

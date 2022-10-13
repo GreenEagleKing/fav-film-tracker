@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const filmController = require('../controllers/films')
+const filmsController = require('../controllers/films')
 //const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', filmsController.getIndex)
