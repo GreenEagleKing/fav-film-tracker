@@ -22,7 +22,7 @@ module.exports = {
                 if (itemData == null) {
                     err = 'Invalid ID'
                 }
-                res.render('film', {title: 'Edit Film', loggedIn: sesh.loggedIn, error: err})
+                res.render('film', {title: 'Edit Film', item:itemData, loggedIn: sesh.loggedIn, error: err})
             })
         }
     },
@@ -34,7 +34,7 @@ module.exports = {
         } else {
             let film = schemas.film
             let filmId = req.params.id
-            let qry = {_id:id}
+            let qry = {_id:filmId}
             let deleteResult = await film.deleteOne(qry)
             res.redirect('/')
         }
@@ -48,7 +48,7 @@ module.exports = {
            let filmId = req.body.filmId
            let filmName = req.body.filmName
            let filmPoster = req.body.filmPoster
-           let filmURL = req.body.filmURL
+           let filmImdbUrl = req.body.filmImdbUrl
            let film = schemas.film
 
            let qry = {_id:filmId}
@@ -57,7 +57,7 @@ module.exports = {
                 $set : {
                     name: filmName,
                     poster: filmPoster,
-                    filmURL: filmURL
+                    imdbUrl: filmImdbUrl
                 }
            }
 
@@ -74,7 +74,7 @@ module.exports = {
         } else {
            let filmName = req.body.filmName
            let filmPoster = req.body.filmPoster
-           let filmURL = req.body.filmURL
+           let filmImdbUrl = req.body.filmImdbUrl
            let film = schemas.film
 
            let qry = {name: filmName}
@@ -85,7 +85,7 @@ module.exports = {
                     let newFilm = new schemas.film({
                         name: filmName,
                         poster: filmPoster,
-                        filmURL: filmURL
+                        imdbUrl: filmImdbUrl
                     })
                     let saveFilm = await newFilm.save()
                 }

@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <script>
-        function showAddNewMenu() {
-            let newMenu = document.getElementById('new-menu');
-            newMenu.style.display = 'block';
+        function showAddNewfilm() {
+            let newfilm = document.getElementById('new-film');
+            newfilm.style.display = 'block';
         }
     </script>
   </head>
@@ -18,7 +18,7 @@
         <div class="card mt-5 p-4">
 
             <div class="header-img">
-                <div class="menu-icon">
+                <div class="film-icon">
                     <div class="dropdown">
                         <a href="#" class="dropbtn"><span class = 'fa fa-bars'></span></a>
                         <div class="dropdown-content">
@@ -26,25 +26,25 @@
                                 <% if (!loggedIn) { %>
                                     <li><a href="/login">Login</a></li>
                                 <% } else { %>
-                                    <li><a href="#" onclick="showAddNewMenu();return false;">Add new menu</a></li>
+                                    <li><a href="#" onclick="showAddNewfilm();return false;">Add new film</a></li>
                                     <li><a href="/login/logout">Logout</a></li>
                                 <% } %>
                             <ul>
                         </div>
                     </div>
                 </div>
-                <div class="app-icon"><a href="/"><img src="/images/menuhub_logo.png"></a></div>
+                <div class="app-icon"><a href="/"><img src="/images/filmflix_logo.png"></a></div>
             </div>
             
             <% if (loggedIn) { %>
             <div class="login-box">
-                <div id="new-menu">
-                    <h2 class="page-title">New Menu</h2>
-                    <form action="/menu/new" method="POST">
-                        <div class="menu-name"><input type="text" name="menuName" placeholder="Name"></div>
-                        <div class="menu-icon-link"><input type="text" name="menuIcon" placeholder="Icon URL [http]"></div>
-                        <div class="menu-url"><input type="text" name="menuUrl" placeholder="Menu URL [http]"></div>
-                        <div class="menu-btn"><button type="submit" class="btn btn-primary">Save</button></div>
+                <div id="new-film">
+                    <h2 class="page-title">New film</h2>
+                    <form action="/film/new" method="POST">
+                        <div class="film-name"><input type="text" name="filmName" placeholder="Name"></div>
+                        <div class="film-poster-link"><input type="text" name="filmPoster" placeholder="Film Poster URL [http]"></div>
+                        <div class="film-url"><input type="text" name="filmImdbUrl" placeholder="IMDB Link URL [http]"></div>
+                        <div class="film-btn"><button type="submit" class="btn btn-primary">Save</button></div>
                     </form>
                 </div>
             </div>

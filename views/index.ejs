@@ -10,7 +10,7 @@
     <% if (data != null && loggedIn) { data.forEach( item => { %>
     <div class="d-flex flex-row justify-content-between mb-3">
         <div class="d-flex flex-column p-3">
-          <a href="<%= item.filmUrl %>" target="_blank"><img src="<%= item.icon %>" class="icon-img"></a>
+          <a href="<%= item.filmPoster %>" target="_blank"><img src="<%= item.poster %>" class="icon-img"></a>
           <% if (loggedIn) { %>
             <div class="mb-1 p-1">
               <a href="/film/<%= item._id %>">Edit</a> &nbsp; 
@@ -19,8 +19,9 @@
           <% } %>
         </div>
         <div class="film-code pt-4 pl-4">
-          <a href="<%= item.filmUrl %>" target="_blank">
-            <div><i class="fa fa-book-open"></i></div>
+          <a href="<%= item.filmImdbUrl %>" target="_blank">
+            <!-- <div><i class="fa fa-book-open"></i></div> -->
+            <img id="imdb-logo" src="./images/imdblogo.png">
             <span class="mb-2">
               View film
             </span>

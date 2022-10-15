@@ -8,8 +8,8 @@
 <form action="/film/save" method="POST">
     <div class="film-edit">
         <div class="film-name"><input type="text" name="filmName" value="<%= item[0].name %>"></div>
-        <div class="film-icon-link"><input type="text" name="filmIcon" value="<%= item[0].icon %>"> <img src="<%= item[0].icon %>"></div>
-        <div class="film-url"><input type="text" name="filmUrl" value="<%= item[0].filmUrl %>"></div>
+        <div class="film-poster-link"><input type="text" name="filmPoster" value="<%= item[0].poster %>"> <img src="<%= item[0].poster %>"></div>
+        <div class="film-url"><input type="text" name="filmImdbUrl" value="<%= item[0].imdbUrl %>"></div>
         <div class="film-btn">
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-primary" onclick="javascript:location.href='/';">Cancel</button>
