@@ -8,7 +8,7 @@ Functionality:
 
 Static:
 + Add explanation above search bar
-+ Add name of film
+<!-- + Add name of film -->
 
 Styling:
 <!-- + Logo / title / name of product -->

@@ -89,6 +89,10 @@ h5 span {
   width: 90px;
 }
 
+.film-name{
+  padding: 10px 0px;
+}
+
 .header-img {
   display: flex;
   height: 150px;

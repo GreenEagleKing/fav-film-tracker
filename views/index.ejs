@@ -12,6 +12,7 @@
         <div class="d-flex flex-column p-3">
           <a href="<%= item.filmPoster %>" target="_blank"><img src="<%= item.poster %>" class="icon-img"></a>
           <% if (loggedIn) { %>
+            <div class="film-name"><%= item.name %></div>
             <div class="mb-1 p-1">
               <a href="/film/<%= item._id %>">Edit</a> &nbsp; 
               <a href="/film/delete/<%= item._id %>" class="red" onclick="return confirm('Are you sure you wish to delete this?');">Delete</a>
