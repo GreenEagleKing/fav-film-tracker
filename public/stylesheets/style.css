@@ -14,6 +14,10 @@ a, a:link, a:visited, a:hover {
 
 .red {color: red;}
 
+#app-blurb{
+  padding-bottom: 5px;
+}
+
 .card {
     width: 500px;
     border: none;
@@ -95,12 +99,12 @@ h5 span {
 
 .header-img {
   display: flex;
-  height: 150px;
+  height: 80px;
   margin: 0 left;
 }
 
 .app-icon {
-  margin-left: auto;
+  margin-left: 35px;
   padding-right: 5%;
 }
 
@@ -109,7 +113,7 @@ h5 span {
 }
 
 img.icon-img, img.url-img {
-  height: 60px;
+  height: 100px;
 }
 
 .dropdown {

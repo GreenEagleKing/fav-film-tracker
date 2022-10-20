@@ -2,7 +2,7 @@
     
     <form action="/q" method="POST" class="search-form" id="searchForm">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" name="searchInput" <% if (search != '') { %> value="<%= search %>" <% } %>>
+      <input type="text" class="form-control" placeholder="Search your library" name="searchInput" <% if (search != '') { %> value="<%= search %>" <% } %>>
       <div class="input-group-append"><button class="btn btn-primary"><i class="fas fa-search"></i></button></div>
     </div>
     </form>
@@ -10,7 +10,7 @@
     <% if (data != null && loggedIn) { data.forEach( item => { %>
     <div class="d-flex flex-row justify-content-between mb-3">
         <div class="d-flex flex-column p-3">
-          <a href="<%= item.filmPoster %>" target="_blank"><img src="<%= item.poster %>" class="icon-img"></a>
+          <a href="<%= item.poster %>" target="_blank"><img src="<%= item.poster %>" class="icon-img"></a>
           <% if (loggedIn) { %>
             <div class="film-name"><%= item.name %></div>
             <div class="mb-1 p-1">
@@ -20,8 +20,7 @@
           <% } %>
         </div>
         <div class="film-code pt-4 pl-4">
-          <a href="<%= item.filmImdbUrl %>" target="_blank">
-            <!-- <div><i class="fa fa-book-open"></i></div> -->
+          <a href="<%= item.imdbUrl %>" target="_blank">
             <img id="imdb-logo" src="./images/imdblogo.png">
             <span class="mb-2">
               View film
